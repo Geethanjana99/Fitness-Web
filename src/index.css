@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;700;900&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 43 74% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 43 74% 46%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 43 74% 46%;
+    --radius: 0.5rem;
+  }
+  :root[class~="dark"] {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 95%;
+    --card: 180 1% 18%;
+    --card-foreground: 0 0% 95%;
+    --popover: 180 1% 18%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 43 74% 46%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 180 1% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 180 1% 18%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 43 74% 46%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 180 1% 25%;
+    --input: 180 1% 25%;
+    --ring: 43 74% 46%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+@layer utilities {
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
+  }
+  .reveal-left {
+    @apply opacity-0 -translate-x-12 transition-all duration-1000 ease-out;
+  }
+  .reveal-right {
+    @apply opacity-0 translate-x-12 transition-all duration-1000 ease-out;
+  }
+  .reveal-scale {
+    @apply opacity-0 scale-95 transition-all duration-1000 ease-out;
+  }
+  .revealed {
+    @apply opacity-100 translate-y-0 translate-x-0 scale-100;
+  }
+  .gold-glow {
+    @apply transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(212,160,23,0.5)];
+  }
+  .glass {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+  .liquid-glass {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .gold-divider {
+    @apply w-full h-[1px] bg-gold/30;
+  }
+}
