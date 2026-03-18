@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckIcon } from 'lucide-react';
 export function PricingSection() {
   return (
@@ -19,7 +18,7 @@ export function PricingSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-          {/* BRONZE PLAN */}
+          
           <div
             className="reveal-scale bg-card border border-border rounded-2xl p-8 hover:border-gold/50 transition-all"
             style={{
@@ -71,7 +70,7 @@ export function PricingSection() {
             </button>
           </div>
 
-          {/* GOLD PLAN (FEATURED) */}
+          
           <div
             className="reveal-scale relative bg-card border-2 border-gold rounded-2xl p-8 shadow-[0_0_40px_rgba(212,160,23,0.15)] md:scale-105 z-10"
             style={{
@@ -144,7 +143,7 @@ export function PricingSection() {
             </button>
           </div>
 
-          {/* SILVER PLAN */}
+          
           <div
             className="reveal-scale bg-card border border-border rounded-2xl p-8 hover:border-gold/50 transition-all"
             style={{

@@ -9,7 +9,6 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { useScrollReveal } from './hooks/useScrollReveal';
 export function App() {
-  // Initialize dark mode by default
   const [isDark, setIsDark] = useState(true);
   useEffect(() => {
     if (isDark) {
@@ -21,7 +20,6 @@ export function App() {
   const toggleTheme = () => {
     setIsDark(!isDark);
   };
-  // Initialize scroll reveal animations
   useScrollReveal();
   return (
     <div className="min-h-screen w-full bg-background text-foreground overflow-x-hidden selection:bg-gold/30 selection:text-gold">

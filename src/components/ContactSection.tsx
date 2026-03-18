@@ -101,7 +101,7 @@ export function ContactSection() {
 
         <div className="reveal liquid-glass rounded-2xl overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Left Column - Info (Gold Gradient) */}
+            
             <div className="bg-gradient-to-br from-gold/90 to-gold-dark text-black p-10 md:p-12 flex flex-col justify-between">
               <div>
                 <h3 className="font-heading font-bold text-2xl md:text-3xl mb-6">
@@ -174,7 +174,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Right Column - Form */}
+            
             <div className="bg-card p-10 md:p-12">
               {isSubmitted ?
               <div className="h-full flex flex-col items-center justify-center text-center py-12 animate-fade-in">

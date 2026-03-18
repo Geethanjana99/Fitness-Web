@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FacebookIcon, InstagramIcon, TwitterIcon } from 'lucide-react';
 export function Footer() {
   return (
@@ -6,26 +6,28 @@ export function Footer() {
       <div className="absolute top-0 left-0 w-full gold-divider"></div>
 
       <div className="container mx-auto reveal">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <a href="#hero" className="flex items-center gap-2 mb-6">
-              <img src="/Logo.png" alt="Logo" className="h-10 w-auto object-contain" />
-              <span className="font-heading font-bold text-2xl tracking-wider text-white">
-                FITNESS
-              </span>
-              <span className="font-heading font-bold text-2xl tracking-wider text-gold">
-                SPORTS CENTER
-              </span>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
+          
+          <div className="md:col-span-2">
+            <a href="#hero" className="flex flex-col items-start gap-4 mb-6">
+              <img src="/Logo.png" alt="Logo" className="h-24 w-auto object-contain" />
+              <div className="flex items-baseline gap-2">
+                <span className="font-heading font-bold text-2xl tracking-wider text-white">
+                  FITNESS
+                </span>
+                <span className="font-heading font-bold text-2xl tracking-wider text-gold">
+                  SPORTS CENTER
+                </span>
+              </div>
             </a>
-            <p className="text-gray-400 leading-relaxed max-w-sm">
+            <p className="text-gray-400 leading-relaxed max-w-lg text-lg">
               The premier destination for elite personal training, luxury
               amenities, and unparalleled fitness experiences.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
+          
+          <div className="md:pl-8 lg:pl-12">
             <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-6 text-white">
               Quick Links
             </h4>
@@ -65,7 +67,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social & Contact */}
+          
           <div>
             <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-6 text-white">
               Connect With Us

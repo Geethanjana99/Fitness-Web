@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   SunIcon,
   MoonIcon,
@@ -18,7 +18,6 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      // Simple active section detection
       const sections = ['hero', 'about', 'services', 'contact'];
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -56,7 +55,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
       className={`fixed top-0 z-50 transition-all duration-500 ${isScrolled ? 'left-4 right-4 md:left-8 md:right-8 mt-4 liquid-glass py-3 rounded-2xl' : 'left-0 right-0 bg-transparent py-6 w-full'}`}>
       
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
+        
         <a href="#hero" className="flex items-center gap-2 z-50">
           <img src="/Logo.png" alt="Logo" className="h-10 w-auto object-contain" />
           <span className="font-heading font-bold text-2xl tracking-wider text-foreground">
@@ -67,7 +66,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           </span>
         </a>
 
-        {/* Desktop Nav */}
+        
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-8">
             {navLinks.map((link) =>
@@ -78,7 +77,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 
                   {link.name}
                 </a>
-                {/* Active Indicator */}
+                
                 <div
                 className={`h-0.5 rounded-full transition-all duration-300 ${activeSection === link.href.substring(1) ? 'bg-gold w-full' : 'bg-transparent w-0 group-hover:w-full group-hover:bg-gold/50'}`} />
               
@@ -113,7 +112,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           </div>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        
         <div className="md:hidden flex items-center gap-3 z-50">
           <button
             onClick={toggleTheme}
@@ -138,7 +137,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        
         <div
           className={`fixed inset-0 backdrop-blur-xl bg-black/90 z-40 flex flex-col items-center justify-center transition-transform duration-300 md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           
