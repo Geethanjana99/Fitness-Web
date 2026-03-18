@@ -10,7 +10,7 @@ export function Footer() {
           
           <div className="md:col-span-2">
             <a href="#hero" className="flex flex-col items-start gap-4 mb-6">
-              <img src="/Logo.png" alt="Logo" className="h-24 w-auto object-contain" />
+              <img src={`${import.meta.env.BASE_URL}Logo.png`} alt="Logo" className="h-24 w-auto object-contain" />
               <div className="flex items-baseline gap-2">
                 <span className="font-heading font-bold text-2xl tracking-wider text-white">
                   FITNESS

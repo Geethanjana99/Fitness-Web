@@ -55,9 +55,9 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
       className={`fixed top-0 z-50 transition-all duration-500 ${isScrolled ? 'left-4 right-4 md:left-8 md:right-8 mt-4 liquid-glass py-3 rounded-2xl' : 'left-0 right-0 bg-transparent py-6 w-full'}`}>
       
       <div className="container mx-auto px-6 flex items-center justify-between">
-        
+
         <a href="#hero" className="flex items-center gap-2 z-50">
-          <img src="/Logo.png" alt="Logo" className="h-10 w-auto object-contain" />
+          <img src={`${import.meta.env.BASE_URL}Logo.png`} alt="Logo" className="h-10 w-auto object-contain" />
           <span className="font-heading font-bold text-2xl tracking-wider text-foreground">
             FITNESS
           </span>

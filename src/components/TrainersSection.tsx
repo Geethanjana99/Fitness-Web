@@ -7,7 +7,7 @@ export function TrainersSection() {
     description:
     'Former Olympian specializing in powerlifting and functional hypertrophy.',
     image:
-    '/Trainer 1.jpg',
+    `${import.meta.env.BASE_URL}Trainer 1.jpg`,
     delay: '0ms'
   },
   {
@@ -16,7 +16,7 @@ export function TrainersSection() {
     description:
     'Expert in high-intensity interval training and athletic performance optimization.',
     image:
-    '/Trainer 2.jpg',
+    `${import.meta.env.BASE_URL}Trainer 2.jpg`,
     delay: '150ms'
   },
   {
@@ -25,7 +25,7 @@ export function TrainersSection() {
     description:
     'Doctor of Physical Therapy focused on injury prevention and biomechanics.',
     image:
-    '/Trainer 3.jpg',
+    `${import.meta.env.BASE_URL}Trainer 3.jpg`,
     delay: '300ms'
   },
   {
@@ -34,7 +34,7 @@ export function TrainersSection() {
     description:
     'Certified sports nutritionist helping clients fuel for peak performance.',
     image:
-    '/Trainer 4.jpg',
+    `${import.meta.env.BASE_URL}Trainer 4.jpg`,
     delay: '450ms'
   }];
 

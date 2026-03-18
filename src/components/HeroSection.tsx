@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, ArrowRightIcon } from 'lucide-react';
-const HERO_IMAGES = ["/Background.jpg", "/Background2.jpg"];
+const HERO_IMAGES = [`${import.meta.env.BASE_URL}Background.jpg`, `${import.meta.env.BASE_URL}Background2.jpg`];
 
 
 
