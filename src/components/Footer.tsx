@@ -9,14 +9,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <a href="#hero" className="flex items-center gap-2 mb-6">
-              <img src="/Logo.png" alt="Logo" className="h-10 w-auto object-contain" />
-              <span className="font-heading font-bold text-2xl tracking-wider text-white">
-                FITNESS
-              </span>
-              <span className="font-heading font-bold text-2xl tracking-wider text-gold">
-                SPORTS CENTER
-              </span>
+            <a href="#hero" className="flex flex-col items-start gap-4 mb-6">
+              <img src="/Logo.png" alt="Logo" className="h-24 w-auto object-contain" />
+              <div className="flex items-baseline gap-2">
+                <span className="font-heading font-bold text-2xl tracking-wider text-white">
+                  FITNESS
+                </span>
+                <span className="font-heading font-bold text-2xl tracking-wider text-gold">
+                  SPORTS CENTER
+                </span>
+              </div>
             </a>
             <p className="text-gray-400 leading-relaxed max-w-sm">
               The premier destination for elite personal training, luxury
