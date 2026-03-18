@@ -8,7 +8,7 @@ export function TrainersSection() {
     description:
     'Former Olympian specializing in powerlifting and functional hypertrophy.',
     image:
-    'https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&h=800&fit=crop',
+    '/Trainer 1.jpg',
     delay: '0ms'
   },
   {
@@ -17,7 +17,7 @@ export function TrainersSection() {
     description:
     'Expert in high-intensity interval training and athletic performance optimization.',
     image:
-    'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop',
+    '/Trainer 2.jpg',
     delay: '150ms'
   },
   {
@@ -26,7 +26,7 @@ export function TrainersSection() {
     description:
     'Doctor of Physical Therapy focused on injury prevention and biomechanics.',
     image:
-    'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=800&fit=crop',
+    '/Trainer 3.jpg',
     delay: '300ms'
   },
   {
@@ -35,7 +35,7 @@ export function TrainersSection() {
     description:
     'Certified sports nutritionist helping clients fuel for peak performance.',
     image:
-    'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&h=800&fit=crop',
+    '/Trainer 4.jpg',
     delay: '450ms'
   }];
 
