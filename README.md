@@ -21,5 +21,11 @@
    ```
 
 ## Live Link
-[Live Link Pending](#) *(Update this placeholder with your Vercel/Netlify URL when deployed)*
+
+https://geethanjana99.github.io/Fitness-Web/
+
+## Figma Link
+
+https://www.figma.com/design/Yw2cmWFBoBR5imrChs1e4p/Fitness-Website?node-id=0-1&t=30nIjGNC0y3eooPG-1
+
 
