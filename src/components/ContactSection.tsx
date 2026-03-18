@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { submitContactForm } from '../api/contactApi';
 import {
   PhoneIcon,
   MailIcon,
@@ -11,16 +12,78 @@ import {
 'lucide-react';
 export function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const handleSubmit = (e: React.FormEvent) => {
+  
+  const [formErrors, setFormErrors] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const validate = () => {
+    let valid = true;
+    let errors = { name: '', email: '', message: '' };
+
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required';
+      valid = false;
+    } else if (formData.name.length < 3) {
+      errors.name = 'Name must be at least 3 characters';
+      valid = false;
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+      valid = false;
+    }
+
+    if (!formData.message.trim()) {
+      errors.message = 'Message is required';
+      valid = false;
+    } else if (formData.message.length < 10) {
+      errors.message = 'Message must be at least 10 characters';
+      valid = false;
+    }
+
+    setFormErrors(errors);
+    return valid;
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+    // Clear individual error as user types
+    if (formErrors[id as keyof typeof formErrors]) {
+      setFormErrors((prev) => ({ ...prev, [id]: '' }));
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setTimeout(() => {
+    setErrorMsg('');
+    
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      await submitContactForm(formData);
       setIsSubmitted(true);
-    }, 500);
+      setFormData({ name: '', email: '', message: '' }); // reset form
+    } catch (err: any) {
+      setErrorMsg(err.message || 'An error occurred while submitting.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <section id="contact" className="py-24 px-6 bg-muted/30 relative">
@@ -134,7 +197,13 @@ export function ContactSection() {
               <form
                 onSubmit={handleSubmit}
                 className="space-y-6 h-full flex flex-col justify-center">
-                
+                  
+                  {errorMsg && (
+                    <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-500 text-sm">
+                      {errorMsg}
+                    </div>
+                  )}
+
                   <div>
                     <label
                     htmlFor="name"
@@ -145,17 +214,11 @@ export function ContactSection() {
                     <input
                     type="text"
                     id="name"
-                    required
                     value={formData.name}
-                    onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      name: e.target.value
-                    })
-                    }
-                    className="w-full bg-transparent border border-border focus:border-gold focus:ring-2 focus:ring-gold/20 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-all font-body"
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border ${formErrors.name ? 'border-red-500' : 'border-border focus:border-gold focus:ring-gold/20'} focus:ring-2 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-all font-body`}
                     placeholder="John Doe" />
-                  
+                    {formErrors.name && <p className="text-red-500 text-xs mt-1">{formErrors.name}</p>}
                   </div>
                   <div>
                     <label
@@ -167,17 +230,11 @@ export function ContactSection() {
                     <input
                     type="email"
                     id="email"
-                    required
                     value={formData.email}
-                    onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      email: e.target.value
-                    })
-                    }
-                    className="w-full bg-transparent border border-border focus:border-gold focus:ring-2 focus:ring-gold/20 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-all font-body"
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border ${formErrors.email ? 'border-red-500' : 'border-border focus:border-gold focus:ring-gold/20'} focus:ring-2 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-all font-body`}
                     placeholder="john@example.com" />
-                  
+                    {formErrors.email && <p className="text-red-500 text-xs mt-1">{formErrors.email}</p>}
                   </div>
                   <div>
                     <label
@@ -188,23 +245,23 @@ export function ContactSection() {
                     </label>
                     <textarea
                     id="message"
-                    required
                     value={formData.message}
-                    onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      message: e.target.value
-                    })
-                    }
-                    className="w-full bg-transparent border border-border focus:border-gold focus:ring-2 focus:ring-gold/20 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-all font-body min-h-[150px] resize-y"
+                    onChange={handleChange}
+                    className={`w-full bg-transparent border ${formErrors.message ? 'border-red-500' : 'border-border focus:border-gold focus:ring-gold/20'} focus:ring-2 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-all font-body min-h-[150px] resize-y`}
                     placeholder="How can we help you achieve your fitness goals?">
                   </textarea>
+                  {formErrors.message && <p className="text-red-500 text-xs mt-1">{formErrors.message}</p>}
                   </div>
                   <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-gold to-gold-light text-black font-heading font-bold uppercase tracking-wider px-8 py-4 rounded-full gold-glow transition-all mt-4">
-                  
-                    Send Message
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-gold to-gold-light text-black font-heading font-bold uppercase tracking-wider px-8 py-4 rounded-full gold-glow transition-all mt-4 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center">
+                    {isSubmitting ? (
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    ) : 'Send Message'}
                   </button>
                 </form>
               }
