@@ -7,7 +7,7 @@ export function Footer() {
 
       <div className="container mx-auto reveal">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
-          {/* Brand */}
+          
           <div className="md:col-span-2">
             <a href="#hero" className="flex flex-col items-start gap-4 mb-6">
               <img src="/Logo.png" alt="Logo" className="h-24 w-auto object-contain" />
@@ -26,7 +26,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          
           <div className="md:pl-8 lg:pl-12">
             <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-6 text-white">
               Quick Links
@@ -67,7 +67,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social & Contact */}
+          
           <div>
             <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-6 text-white">
               Connect With Us

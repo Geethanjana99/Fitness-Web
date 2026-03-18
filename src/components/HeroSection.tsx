@@ -11,7 +11,7 @@ export function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 30000); // 30 seconds
+    }, 30000);
     return () => clearInterval(timer);
   }, [currentSlide]);
   const nextSlide = () => {
@@ -27,7 +27,7 @@ export function HeroSection() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden">
       
-      {/* Background Image Carousel with Overlay */}
+      
       {HERO_IMAGES.map((img, index) =>
       <div
         key={index}
@@ -41,9 +41,9 @@ export function HeroSection() {
         </div>
       )}
 
-      {/* Content */}
+      
       <div className="container mx-auto px-6 relative z-20 flex flex-col md:flex-row items-center justify-start h-full pt-20">
-        {/* Left/Right Navigation Indicators (Functional) */}
+        
         <button
           onClick={prevSlide}
           className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 border border-white/10 items-center justify-center cursor-pointer hover:bg-gold hover:border-gold transition-colors group z-30"
@@ -59,7 +59,7 @@ export function HeroSection() {
           <ChevronRightIcon className="text-white group-hover:text-black w-6 h-6" />
         </button>
 
-        {/* Dot Indicators */}
+        
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-30">
           {HERO_IMAGES.map((_, index) =>
           <button
@@ -71,7 +71,7 @@ export function HeroSection() {
           )}
         </div>
 
-        {/* Main Hero Text */}
+        
         <div className="w-full md:w-2/3 lg:w-1/2 text-left flex flex-col items-start">
           <div
             className="animate-fade-in-up"
