@@ -15,7 +15,7 @@ export function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Text & Stats */}
+          
           <div className="reveal-left space-y-8">
             <div className="space-y-6">
               <p className="text-muted-foreground leading-relaxed text-lg">
@@ -37,7 +37,7 @@ export function AboutSection() {
               </p>
             </div>
 
-            {/* Horizontal Stats */}
+            
             <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-border/50">
               <div className="flex flex-col">
                 <span className="text-3xl font-heading font-bold text-gold">
@@ -77,7 +77,7 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Right Column - Image */}
+          
           <div className="reveal-right">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-gold/20 hover:border-gold/40 transition-colors shadow-2xl group">
               <img

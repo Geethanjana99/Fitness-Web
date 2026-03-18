@@ -1,4 +1,3 @@
-import React from 'react';
 import { InstagramIcon, TwitterIcon } from 'lucide-react';
 export function TrainersSection() {
   const trainers = [
@@ -66,17 +65,17 @@ export function TrainersSection() {
               transitionDelay: trainer.delay
             }}>
             
-              {/* Image Container */}
+              
               <div className="relative aspect-[3/4] overflow-hidden">
                 <img
                 src={trainer.image}
                 alt={trainer.name}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               
-                {/* Subtle overlay for depth */}
+                
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
 
-                {/* Social Links (appear on hover) */}
+                
                 <div className="absolute top-4 right-4 flex flex-col gap-2 translate-x-12 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
                   <a
                   href="#"
@@ -93,7 +92,7 @@ export function TrainersSection() {
                 </div>
               </div>
 
-              {/* Text Content — Always Visible */}
+              
               <div className="p-6">
                 <h3 className="font-heading font-bold text-lg text-foreground mb-1">
                   {trainer.name}
