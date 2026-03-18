@@ -57,14 +57,16 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
       
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 z-50">
-          <img src="/Logo.png" alt="Logo" className="h-10 w-auto object-contain" />
-          <span className="font-heading font-bold text-2xl tracking-wider text-foreground">
-            FITNESS
-          </span>
-          <span className="font-heading font-bold text-2xl tracking-wider text-gold">
-            SPORTS CENTER
-          </span>
+        <a href="#hero" className="flex flex-col items-center sm:items-start gap-1 z-50">
+          <img src="/Logo.png" alt="Logo" className="h-20 w-auto object-contain" />
+          <div className="flex items-center gap-2">
+            <span className="font-heading font-bold text-lg md:text-xl tracking-wider text-foreground">
+              FITNESS
+            </span>
+            <span className="font-heading font-bold text-lg md:text-xl tracking-wider text-gold">
+              SPORTS CENTER
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
