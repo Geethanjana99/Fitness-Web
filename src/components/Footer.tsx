@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FacebookIcon, InstagramIcon, TwitterIcon } from 'lucide-react';
 export function Footer() {
   return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import { InstagramIcon, TwitterIcon } from 'lucide-react';
 export function TrainersSection() {
   const trainers = [

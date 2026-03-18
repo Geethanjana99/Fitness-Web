@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, ArrowRightIcon } from 'lucide-react';
 const HERO_IMAGES = ["/Background.jpg", "/Background2.jpg"];
 

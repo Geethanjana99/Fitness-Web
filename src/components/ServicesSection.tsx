@@ -1,4 +1,3 @@
-import React from 'react';
 import { DumbbellIcon, CrownIcon, SparklesIcon } from 'lucide-react';
 export function ServicesSection() {
   const services = [
